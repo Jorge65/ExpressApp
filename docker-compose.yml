@@ -11,11 +11,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     container_name: watchtower
 
-  express-app:
+  expressapp:
     image: jormakemppainen/expressapp
-    restart: unless-stopped
     container_name: mun-expressapp
-    ports:
-      - 8080:8080
+    restart: unless-stopped
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+    ports:
+      - 8080:8080
